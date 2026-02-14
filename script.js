@@ -283,13 +283,27 @@ console.log('💚 Website loaded successfully!');
 console.log('🔗 Connect: https://medium.com/@natanyakhanna5');
 
 // ============================================
-// 11. NEURAL NETWORK BACKGROUND ANIMATION
+// 11. ENHANCED NEURAL NETWORK ANIMATION
 // ============================================
 class NeuralNetworkAnimation {
     constructor() {
         this.canvas = document.getElementById('neural-canvas');
         this.ctx = this.canvas.getContext('2d');
         this.resize();
+
+        // Configuration
+        this.config = {
+            particleColor: 'rgba(20, 184, 166, 0.6)', // Teal-500
+            lineColor: 'rgba(20, 184, 166, 0.2)',
+            particleAmount: 0.0001, // Density 
+            defaultSpeed: 0.5,
+            variantSpeed: 1,
+            defaultRadius: 2,
+            variantRadius: 2,
+            linkRadius: 180, // Connection distance
+        };
+
+        this.particles = [];
         this.initParticles();
         this.animate();
 
@@ -317,15 +331,18 @@ class NeuralNetworkAnimation {
 
     initParticles() {
         this.particles = [];
-        const particleCount = Math.min(Math.floor(window.innerWidth * window.innerHeight / 15000), 100);
+        const particleCount = Math.floor(this.canvas.width * this.canvas.height * this.config.particleAmount);
 
         for (let i = 0; i < particleCount; i++) {
             this.particles.push({
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: (Math.random() - 0.5) * 0.5,
-                size: Math.random() * 2 + 1
+                vx: (Math.random() - 0.5) * this.config.defaultSpeed,
+                vy: (Math.random() - 0.5) * this.config.defaultSpeed,
+                size: Math.random() * this.config.variantRadius + this.config.defaultRadius,
+                baseSize: Math.random() * this.config.variantRadius + this.config.defaultRadius,
+                pulseAngle: Math.random() * Math.PI * 2,
+                pulseSpeed: 0.05 + Math.random() * 0.05
             });
         }
     }
@@ -335,50 +352,55 @@ class NeuralNetworkAnimation {
 
         // Update and draw particles
         this.particles.forEach(p => {
+            // Movement
             p.x += p.vx;
             p.y += p.vy;
+
+            // Pulsing effect (Brain activity)
+            p.pulseAngle += p.pulseSpeed;
+            p.size = p.baseSize + Math.sin(p.pulseAngle) * 0.5;
 
             // Bounce off edges
             if (p.x < 0 || p.x > this.canvas.width) p.vx *= -1;
             if (p.y < 0 || p.y > this.canvas.height) p.vy *= -1;
 
-            // Mouse interaction (repel)
+            // Mouse interaction (Synaptic attraction)
             if (this.mouse.x != null) {
                 const dx = p.x - this.mouse.x;
                 const dy = p.y - this.mouse.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < 150) {
+                if (distance < 200) {
                     const angle = Math.atan2(dy, dx);
-                    // Push away
-                    p.vx -= Math.cos(angle) * 0.02;
-                    p.vy -= Math.sin(angle) * 0.02;
+                    // Gently attract/repel (interactive feel)
+                    p.vx -= Math.cos(angle) * 0.01;
+                    p.vy -= Math.sin(angle) * 0.01;
                 }
             }
 
             // Draw particle
             this.ctx.beginPath();
-            this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-            this.ctx.fillStyle = 'rgba(20, 184, 166, 0.4)'; // Teal-500
+            this.ctx.arc(p.x, p.y, Math.max(0, p.size), 0, Math.PI * 2);
+            this.ctx.fillStyle = this.config.particleColor;
             this.ctx.fill();
         });
 
-        // Draw connections
+        // Draw connections (Synapses)
         this.connectParticles();
 
         requestAnimationFrame(() => this.animate());
     }
 
     connectParticles() {
-        const maxDistance = 150;
         for (let i = 0; i < this.particles.length; i++) {
             for (let j = i; j < this.particles.length; j++) {
                 const dx = this.particles[i].x - this.particles[j].x;
                 const dy = this.particles[i].y - this.particles[j].y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
-                if (distance < maxDistance) {
+                if (distance < this.config.linkRadius) {
+                    const opacity = 1 - (distance / this.config.linkRadius);
                     this.ctx.beginPath();
-                    this.ctx.strokeStyle = `rgba(20, 184, 166, ${0.3 * (1 - distance / maxDistance)})`; // Fade out
+                    this.ctx.strokeStyle = `rgba(20, 184, 166, ${opacity * 0.4})`; // Teal-500 fading
                     this.ctx.lineWidth = 1;
                     this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
                     this.ctx.lineTo(this.particles[j].x, this.particles[j].y);

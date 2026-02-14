@@ -33,11 +33,11 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Archivo & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind Config & Custom Styles -->
@@ -46,47 +46,27 @@
             theme: {
                 extend: {
                     colors: {
-                        'teal': {
-                            'neutral-warm': {
-                                50: '#F9FAFB', // Cool Gray/White alternate
-                                100: '#F3F4F6',
-                                200: '#E5E7EB',
-                                300: '#D1D5DB',
-                                400: '#9CA3AF',
-                                500: '#6B7280',
-                                600: '#4B5563', // Text color
-                                700: '#374151',
-                                800: '#1F2937',
-                                900: '#111827',
-                            }
-                        },
-                        'sage': {
-                            400: '#86EFAC',
-                            500: '#22C55E',
-                        },
-                    },
-                    animation: {
-                        blob: "blob 7s infinite",
-                    },
-                    keyframes: {
-                        blob: {
-                            "0%": {
-                                transform: "translate(0px, 0px) scale(1)",
-                            },
-                            "33%": {
-                                transform: "translate(30px, -50px) scale(1.1)",
-                            },
-                            "66%": {
-                                transform: "translate(-20px, 20px) scale(0.9)",
-                            },
-                            "100%": {
-                                transform: "translate(0px, 0px) scale(1)",
-                            },
-                        },
+                        primary: '#0F766E', // Deep Teal
+                        secondary: '#22C55E', // Sage Green
+                        accent: '#A855F7', // Soft Purple (Brain)
+                        background: '#F8FAFC', // Off-white
+                        surface: 'rgba(255, 255, 255, 0.6)', // Glass
                     },
                     fontFamily: {
                         'sans': ['Inter', 'sans-serif'],
-                        'heading': ['Poppins', 'sans-serif'],
+                        'heading': ['Archivo', 'sans-serif'],
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            "0%": { transform: "translate(0px, 0px) scale(1)" },
+                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                            "100%": { transform: "translate(0px, 0px) scale(1)" },
+                        }
                     }
                 }
             }
@@ -104,7 +84,15 @@
         h4,
         h5,
         h6 {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Archivo', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
 
         /* Scroll reveal animations */
@@ -212,13 +200,14 @@
     </script>
 </head>
 
-<body class="bg-neutral-warm-50 text-neutral-warm-600">
+<body class="bg-slate-50 text-gray-800 font-sans selection:bg-teal-200 selection:text-teal-900">
 
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <a href="#home" class="text-xl md:text-2xl font-heading font-bold text-teal-500">Natanya Khanna</a>
+                <a href="#home" class="text-xl md:text-2xl font-heading font-bold text-teal-700 tracking-tight">Natanya
+                    Khanna</a>
 
                 <!-- Desktop Menu -->
                 <ul class="hidden md:flex space-x-8">
@@ -271,7 +260,7 @@
                         class="w-full h-full rounded-full object-cover shadow-md">
                 </div>
 
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-neutral-warm-600 mb-6">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-gray-900 mb-6 tracking-tight">
                     Natanya Khanna
                 </h1>
 
@@ -327,8 +316,8 @@
 
             <div class="grid md:grid-cols-2 gap-12 items-start">
                 <div class="reveal">
-                    <div class="bg-gradient-to-br from-teal-100 to-sage-100 rounded-2xl p-8 h-full min-h-[400px]">
-                        <h3 class="text-2xl font-heading font-bold text-teal-600 mb-6">Honors & Awards</h3>
+                    <div class="glass-card rounded-2xl p-8 h-full min-h-[400px]">
+                        <h3 class="text-2xl font-heading font-bold text-teal-700 mb-6">Honors & Awards</h3>
                         <ul class="space-y-4">
                             <li class="flex items-start">
                                 <div class="bg-teal-500 rounded-full p-1 mr-3 mt-1 min-w-[24px]">
@@ -456,7 +445,7 @@
 
                     <!-- CNRI -->
                     <div
-                        class="reveal bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-teal-500">
+                        class="reveal glass-card rounded-xl p-6 transition-all duration-300 border-l-4 border-teal-500 hover:-translate-y-1">
                         <h4 class="text-xl font-bold text-neutral-warm-600">Intern and Volunteer</h4>
                         <p class="text-teal-600 font-medium mb-2">Centre for Neurodiversity Research and Innovation
                             (CNRI)</p>
@@ -472,7 +461,7 @@
 
                     <!-- Synapses -->
                     <div
-                        class="reveal bg-white/80 backdrop-blur-md rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-sage-500 border border-white/50">
+                        class="reveal glass-card rounded-xl p-6 transition-all duration-300 border-l-4 border-sage-500 hover:-translate-y-1">
                         <h4 class="text-xl font-bold text-neutral-warm-600">Intern</h4>
                         <p class="text-sage-600 font-medium mb-2">Synapses Neuropsychiatry Clinic</p>
                         <div class="flex justify-between text-sm text-neutral-warm-500 mb-4">
@@ -501,7 +490,7 @@
 
                     <!-- Christ University -->
                     <div
-                        class="reveal bg-white/80 backdrop-blur-md rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-teal-500 border border-white/50">
+                        class="reveal glass-card rounded-xl p-6 transition-all duration-300 border-l-4 border-teal-500 hover:-translate-y-1">
                         <h4 class="text-xl font-bold text-neutral-warm-600">MSc in Health Psychology</h4>
                         <p class="text-teal-600 font-medium">Christ University, Bangalore</p>
                         <p class="text-sm text-neutral-warm-500 mt-1">Expected Completion: June 2025</p>
@@ -509,7 +498,7 @@
 
                     <!-- IILM University -->
                     <div
-                        class="reveal bg-white/80 backdrop-blur-md rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-sage-500 border border-white/50">
+                        class="reveal glass-card rounded-xl p-6 transition-all duration-300 border-l-4 border-sage-500 hover:-translate-y-1">
                         <h4 class="text-xl font-bold text-neutral-warm-600">BA in Psychology</h4>
                         <p class="text-sage-600 font-medium">IILM University, Greater Noida</p>
                         <p class="text-sm text-neutral-warm-500 mt-1">Sep 2022 - May 2025</p>
@@ -517,7 +506,7 @@
 
                     <!-- University of Chicago -->
                     <div
-                        class="reveal bg-white/80 backdrop-blur-md rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-teal-500 border border-white/50">
+                        class="reveal glass-card rounded-xl p-6 transition-all duration-300 border-l-4 border-teal-500 hover:-translate-y-1">
                         <h4 class="text-xl font-bold text-neutral-warm-600">Neuroanatomy Course</h4>
                         <p class="text-teal-600 font-medium">University of Chicago</p>
                         <p class="text-sm text-neutral-warm-500 mt-1">Nov 2022 - Jan 2023</p>
@@ -525,7 +514,7 @@
 
                     <!-- DPS -->
                     <div
-                        class="reveal bg-white/80 backdrop-blur-md rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-sage-500 border border-white/50">
+                        class="reveal glass-card rounded-xl p-6 transition-all duration-300 border-l-4 border-sage-500 hover:-translate-y-1">
                         <h4 class="text-xl font-bold text-neutral-warm-600">School Education</h4>
                         <p class="text-sage-600 font-medium">Delhi Public School, India</p>
                         <p class="text-sm text-neutral-warm-500 mt-1">May 2005 - June 2021</p>
@@ -554,7 +543,7 @@
 
             <div class="reveal max-w-4xl mx-auto">
                 <div
-                    class="bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-neutral-warm-100 relative overflow-hidden group hover:shadow-2xl transition-all duration-300">
+                    class="glass-card rounded-2xl p-8 relative overflow-hidden group transition-all duration-300 hover:-translate-y-1">
                     <!-- Decorative accent -->
                     <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-teal-400 to-sage-400"></div>
 
