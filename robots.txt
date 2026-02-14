@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://natanyakhanna.github.io/sitemap.xml

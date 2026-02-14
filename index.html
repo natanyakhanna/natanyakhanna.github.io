@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Natanya Khanna - Psychology Portfolio | Christ University</title>
+    <link rel="canonical" href="https://natanyakhanna.github.io/" />
 
     <!-- SEO Meta Tags -->
     <meta name="description"
@@ -140,22 +141,72 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Natanya Khanna",
-        "affiliation": {
-            "@type": "EducationalOrganization",
-            "name": "Christ University",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Bangalore",
-                "addressCountry": "India"
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "https://natanyakhanna.github.io/#person",
+                "name": "Natanya Khanna",
+                "affiliation": {
+                    "@type": "EducationalOrganization",
+                    "name": "Christ University",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Bangalore",
+                        "addressCountry": "India"
+                    }
+                },
+                "jobTitle": "Master's in Psychology Student",
+                "url": "https://natanyakhanna.github.io",
+                "sameAs": [
+                    "https://www.linkedin.com/in/natanyakhanna",
+                    "https://medium.com/@natanyakhanna5"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://natanyakhanna.github.io/#website",
+                "url": "https://natanyakhanna.github.io/",
+                "name": "Natanya Khanna - Psychology Portfolio",
+                "description": "Exploring the Human Mind | Masters in Psychology Candidate at Christ University",
+                "publisher": {
+                    "@id": "https://natanyakhanna.github.io/#person"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://natanyakhanna.github.io/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "About",
+                        "item": "https://natanyakhanna.github.io/#about"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Experience",
+                        "item": "https://natanyakhanna.github.io/#experience"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "name": "Research",
+                        "item": "https://natanyakhanna.github.io/#research"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "name": "Writings",
+                        "item": "https://natanyakhanna.github.io/#writings"
+                    }
+                ]
             }
-        },
-        "jobTitle": "Master's in Psychology Student",
-        "url": "https://natanyakhanna.github.io",
-        "sameAs": [
-            "https://www.linkedin.com/in/natanyakhanna",
-            "https://medium.com/@natanyakhanna5"
         ]
     }
     </script>
