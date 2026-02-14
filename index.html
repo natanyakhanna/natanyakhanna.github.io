@@ -4,893 +4,527 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natanya Khanna | Psychology & Neuroscience Portfolio</title>
-    <meta name="description"
-        content="Psychology student | Creating awareness for invisible disabilities | MSc Psychology - Health and Wellbeing candidate.">
 
-    <!-- Design System Fonts: Playfair Display (Headings) + Inter (Body) -->
+    <!-- Primary Meta Tags -->
+    <title>Natanya Khanna | Psychology & Neuroscience Student</title>
+    <meta name="title" content="Natanya Khanna | Psychology & Neuroscience Student">
+    <meta name="description"
+        content="Psychology student at Christ University specializing in health psychology, neuroscience, and invisible disability awareness. MSc candidate, clinical intern, and published writer.">
+    <meta name="keywords"
+        content="Natanya Khanna, Psychology, Neuroscience, Health Psychology, Mental Health, EDS, Hypermobility, Invisible Disabilities, Christ University, Neuropsychiatry">
+    <meta name="author" content="Natanya Khanna">
+    <link rel="canonical" href="https://natanyakhanna.github.io/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://natanyakhanna.github.io/">
+    <meta property="og:title" content="Natanya Khanna | Psychology & Neuroscience Student">
+    <meta property="og:description"
+        content="Psychology student specializing in health psychology, neuroscience, and invisible disability awareness. MSc candidate and clinical intern.">
+    <meta property="og:image" content="https://natanyakhanna.github.io/assets/images/profile.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://natanyakhanna.github.io/">
+    <meta property="twitter:title" content="Natanya Khanna | Psychology & Neuroscience Student">
+    <meta property="twitter:description"
+        content="Psychology student specializing in health psychology, neuroscience, and invisible disability awareness.">
+    <meta property="twitter:image" content="https://natanyakhanna.github.io/assets/images/profile.jpg">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Natanya Khanna",
+      "url": "https://natanyakhanna.github.io/",
+      "image": "https://natanyakhanna.github.io/assets/images/profile.jpg",
+      "jobTitle": "Psychology Student",
+      "worksFor": {
+        "@type": "EducationalOrganization",
+        "name": "Christ University"
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "IILM University"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "University of Chicago"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/natanyakhanna-01411b248",
+        "https://medium.com/@natanyakhanna5"
+      ],
+      "email": "natanyakhanna5@gmail.com",
+      "description": "Psychology student dedicated to creating awareness for invisible disabilities, specializing in EDS and Hypermobility Spectrum Disorder."
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
         rel="stylesheet">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        cream: {
-                            50: '#FAFAF9', // Warm Alabaster Background
-                            100: '#F5F5F4',
-                            200: '#E7E5E4',
-                        },
-                        gold: {
-                            400: '#D4AF37', // Muted Gold
-                            500: '#B4942D',
-                        },
-                        charcoal: {
-                            800: '#44403C', // Warm Dark Grey
-                            600: '#78716C', // Secondary Text
-                        },
-                        sage: {
-                            500: '#84A98C', // Soft Sage Accent
-                        },
+                        primary: {
+                            50: '#EFF6FF',
+                            100: '#DBEAFE',
+                            200: '#BFDBFE',
+                            300: '#93C5FD',
+                            400: '#60A5FA',
+                            500: '#3B82F6',
+                            600: '#2563EB',
+                            700: '#1D4ED8',
+                        }
                     },
                     fontFamily: {
-                        heading: ['"Playfair Display"', 'serif'],
-                        body: ['"Inter"', 'sans-serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
                     },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
-                    }
                 }
             }
         }
     </script>
 
-    <!-- Custom Styles for Luxury Glass -->
     <style>
         body {
-            background-color: #FAFAF9;
-            color: #44403C;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+            color: #1e293b;
             overflow-x: hidden;
         }
 
-        /* Luxury Glass Card */
-        .glass-card {
+        /* Premium Glass Effect */
+        .glass {
             background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.1);
-            /* Gold shadow */
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow:
+                0 8px 32px 0 rgba(59, 130, 246, 0.08),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
         }
 
-        .glass-card:hover {
-            border-color: rgba(212, 175, 55, 0.4);
-            /* Gold border on hover */
-            box-shadow: 0 20px 50px -10px rgba(212, 175, 55, 0.2);
-            transform: translateY(-5px);
+        .glass:hover {
+            background: rgba(255, 255, 255, 0.85);
+            transform: translateY(-2px);
+            box-shadow:
+                0 12px 40px 0 rgba(59, 130, 246, 0.12),
+                inset 0 1px 0 0 rgba(255, 255, 255, 1);
         }
 
-        /* Scrollbar */
+        /* Subtle Blue Gradient Background */
+        .gradient-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .gradient-bg::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(147, 197, 253, 0.1) 0%, transparent 70%);
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(30px, -30px);
+            }
+        }
+
+        /* Simple Fade In */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            max-height: 400px;
+        }
+
+        /* Smooth Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
 
         ::-webkit-scrollbar-track {
-            background: #FAFAF9;
+            background: #f1f5f9;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #D6D3D1;
-            border-radius: 4px;
+            background: #cbd5e1;
+            border-radius: 10px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #D4AF37;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
-            /* Elegant easing */
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Gold Gradient Text */
-        .gradient-text {
-            background: linear-gradient(135deg, #44403C 0%, #D4AF37 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background: #94a3b8;
         }
     </style>
 </head>
 
-<body class="font-body selection:bg-gold-400 selection:text-white">
-
-    <!-- Background Canvas -->
-    <canvas id="neural-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-30"></canvas>
+<body>
 
     <!-- Navigation -->
-    <nav id="navbar"
-        class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent bg-cream-50/80 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-6 py-5">
-            <div class="flex justify-between items-center">
-                <a href="#home" class="text-2xl font-heading font-bold text-charcoal-800 tracking-wide">
-                    Natanya<span class="text-gold-400">.</span>
+    <nav class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4">
+        <div class="max-w-7xl mx-auto glass rounded-full px-4 sm:px-8 py-3 sm:py-4">
+            <div class="flex items-center justify-between">
+                <a href="#home" class="text-xl font-bold text-slate-800 hover:text-primary-600 transition-colors">
+                    NK<span class="text-primary-500">.</span>
                 </a>
 
                 <!-- Desktop Menu -->
-                <ul class="hidden md:flex space-x-12 text-sm font-medium tracking-widest uppercase">
-                    <li><a href="#about"
-                            class="text-charcoal-600 hover:text-gold-400 transition-colors duration-300">About</a></li>
-                    <li><a href="#experience"
-                            class="text-charcoal-600 hover:text-gold-400 transition-colors duration-300">Experience</a>
-                    </li>
-                    <li><a href="#education"
-                            class="text-charcoal-600 hover:text-gold-400 transition-colors duration-300">Education</a>
-                    </li>
-                    <li><a href="#writings"
-                            class="text-charcoal-600 hover:text-gold-400 transition-colors duration-300">Thoughts</a>
-                    </li>
+                <ul class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                    <li><a href="#about" class="hover:text-primary-600 transition-colors">About</a></li>
+                    <li><a href="#experience" class="hover:text-primary-600 transition-colors">Experience</a></li>
+                    <li><a href="#education" class="hover:text-primary-600 transition-colors">Education</a></li>
                     <li><a href="#connect"
-                            class="px-6 py-2 border border-gold-400 text-gold-500 rounded-full hover:bg-gold-400 hover:text-white transition-all duration-300">Connect</a>
+                            class="px-6 py-2 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-all shadow-lg hover:shadow-xl">Connect</a>
                     </li>
                 </ul>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-charcoal-800 focus:outline-none">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="M4 8h16M4 16h16"></path>
-                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+                <button id="mobile-menu-btn"
+                    class="md:hidden p-2 text-slate-600 hover:text-primary-600 transition-colors"
+                    aria-label="Toggle menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
 
             <!-- Mobile Menu -->
-            <ul id="mobile-menu"
-                class="hidden md:hidden absolute top-full left-0 w-full bg-cream-50 shadow-xl border-t border-cream-200 px-6 py-8 space-y-6 text-center">
-                <li><a href="#about"
-                        class="block text-lg text-charcoal-600 hover:text-gold-400 transition-colors">About</a></li>
-                <li><a href="#experience"
-                        class="block text-lg text-charcoal-600 hover:text-gold-400 transition-colors">Experience</a>
-                </li>
-                <li><a href="#education"
-                        class="block text-lg text-charcoal-600 hover:text-gold-400 transition-colors">Education</a></li>
-                <li><a href="#writings"
-                        class="block text-lg text-charcoal-600 hover:text-gold-400 transition-colors">Thoughts</a></li>
-                <li><a href="#connect" class="block text-lg text-gold-500 font-bold">Connect</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
-
-            <!-- Hero Wrapper -->
-            <div class="space-y-8 reveal active">
-
-                <!-- Profile Image with Gold Ring -->
-                <div class="relative w-48 h-48 md:w-60 md:h-60 mx-auto mb-12">
-                    <div class="absolute inset-0 rounded-full border border-gold-400/30 animate-spin"
-                        style="animation-duration: 25s;"></div>
-                    <div class="absolute inset-3 rounded-full border border-charcoal-600/10 animate-spin"
-                        style="animation-duration: 30s; animation-direction: reverse;"></div>
-                    <div class="w-full h-full rounded-full p-2 bg-white shadow-xl">
-                        <img src="assets/images/profile.jpg" alt="Natanya Khanna"
-                            class="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
-                    </div>
-                </div>
-
-                <!-- Titles -->
-                <h1 class="font-heading text-6xl md:text-8xl text-charcoal-800 mb-6 tracking-tight">
-                    Natanya Khanna
-                </h1>
-
-                <div class="space-y-3 font-body text-lg md:text-xl text-charcoal-600 max-w-3xl mx-auto leading-relaxed">
-                    <p>MSc Psychology - Health and Wellbeing | Spirituality and Vedic Psychology</p>
-                    <p>Chronic Illnesses Awareness | QPR Training Gatekeeper</p>
-                    <p class="text-sm uppercase tracking-widest mt-4 text-gold-500 font-semibold">Bengaluru, Karnataka,
-                        India</p>
-                </div>
-
-                <!-- Scroll Indicator -->
-                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
-                    <svg class="w-6 h-6 text-charcoal-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-32 relative">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-20 items-start">
-
-                <!-- Bio -->
-                <div class="reveal space-y-8">
-                    <h2 class="font-heading text-5xl text-charcoal-800">
-                        The <span class="italic text-gold-400">Architecture</span> of the Self.
-                    </h2>
-                    <div class="space-y-6 text-lg text-charcoal-600 leading-loose">
-                        <p>
-                            I am a <span class="font-semibold text-charcoal-800">Psychology student</span> dedicated to
-                            creating awareness for "invisible disabilities," specifically among EDS and Hypermobility
-                            Spectrum Disorder patients.
-                        </p>
-                        <p>
-                            As a <span class="italic">writer, poetess, anchor & host, and public speaker</span>, I
-                            admire brain sciences and dwell on the importance of neuropsychological implications in
-                            research.
-                        </p>
-                        <p>
-                            My journey is a deep soul search rooted in ancient psychology—understanding the "Self" via
-                            Vedic literature and scriptures. I am a beginner investor at the NSE and strive to be a
-                            voice for the Chronic Pain and Illness community.
-                        </p>
-                    </div>
-
-                    <div class="pt-8">
-                        <h3 class="font-heading text-2xl text-charcoal-800 mb-6">Top Skills</h3>
-                        <div class="flex flex-wrap gap-3">
-                            <span
-                                class="px-4 py-2 bg-white border border-cream-200 text-charcoal-600 rounded-full text-sm shadow-sm">Mental
-                                Health Assessment</span>
-                            <span
-                                class="px-4 py-2 bg-white border border-cream-200 text-charcoal-600 rounded-full text-sm shadow-sm">Interpersonal
-                                Communication</span>
-                            <span
-                                class="px-4 py-2 bg-white border border-cream-200 text-charcoal-600 rounded-full text-sm shadow-sm">Working
-                                with Psychologists</span>
-                            <span
-                                class="px-4 py-2 bg-white border border-cream-200 text-charcoal-600 rounded-full text-sm shadow-sm">Public
-                                Speaking</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Awards Card -->
-                <div class="reveal delay-200">
-                    <div class="glass-card rounded-2xl p-10 md:p-12 relative overflow-hidden">
-                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-gold-400/20 rounded-full blur-[50px]"></div>
-
-                        <h3 class="font-heading text-3xl text-charcoal-800 mb-8">Honors & Awards</h3>
-
-                        <div class="space-y-8">
-                            <div class="flex gap-4 items-start">
-                                <div class="text-2xl mt-1">🥇</div>
-                                <div>
-                                    <h4 class="font-bold text-charcoal-800 text-lg">Gold Medalist in Entrepreneurship
-                                    </h4>
-                                    <p class="text-charcoal-600 text-sm">Academic Excellence</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-4 items-start">
-                                <div class="text-2xl mt-1">🏆</div>
-                                <div>
-                                    <h4 class="font-bold text-charcoal-800 text-lg">Olympiad Achiever</h4>
-                                    <p class="text-charcoal-600 text-sm">Competitive Achievement</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-4 items-start">
-                                <div class="text-2xl mt-1">🛡️</div>
-                                <div>
-                                    <h4 class="font-bold text-charcoal-800 text-lg">QPR Gatekeeper Certified</h4>
-                                    <p class="text-charcoal-600 text-sm">Suicide Prevention Training</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-10 pt-8 border-t border-charcoal-600/10">
-                            <a href="#connect"
-                                class="text-gold-500 font-semibold hover:text-gold-600 transition-colors">Download
-                                Curriculum Vitae →</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience & Education -->
-    <section id="experience" class="py-32 relative bg-cream-100">
-        <div class="max-w-6xl mx-auto px-6">
-
-            <div class="grid md:grid-cols-2 gap-16">
-
-                <!-- Experience -->
-                <div class="reveal">
-                    <header class="mb-10 flex items-center gap-4">
-                        <div class="w-12 h-[1px] bg-gold-400"></div>
-                        <h2 class="font-heading text-4xl text-charcoal-800">Experience</h2>
-                    </header>
-
-                    <div class="space-y-8 border-l border-gold-400/30 pl-8 ml-4">
-
-                        <div class="relative group">
-                            <div
-                                class="absolute -left-[38px] top-2 w-4 h-4 rounded-full bg-cream-100 border-2 border-gold-400 group-hover:bg-gold-400 transition-colors">
-                            </div>
-                            <h3 class="font-heading text-2xl text-charcoal-800">Centre for Neurodiversity Research and
-                                Innovation (CNRI)</h3>
-                            <p class="text-gold-500 font-medium mb-1">Intern and Volunteer</p>
-                            <p class="text-charcoal-600 text-sm mb-4">Jan 2026 - Present (2 months) | Bengaluru, India
-                            </p>
-                        </div>
-
-                        <div class="relative group">
-                            <div
-                                class="absolute -left-[38px] top-2 w-4 h-4 rounded-full bg-cream-100 border-2 border-charcoal-400 group-hover:bg-charcoal-600 transition-colors">
-                            </div>
-                            <h3 class="font-heading text-2xl text-charcoal-800">Synapses Neuropsychiatry Clinic</h3>
-                            <p class="text-charcoal-600 font-medium mb-1">Intern</p>
-                            <p class="text-charcoal-600 text-sm mb-4">Nov 2023 - Mar 2024 (5 months) | Delhi, India</p>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Education -->
-                <div id="education" class="reveal delay-100">
-                    <header class="mb-10 flex items-center gap-4">
-                        <div class="w-12 h-[1px] bg-gold-400"></div>
-                        <h2 class="font-heading text-4xl text-charcoal-800">Education</h2>
-                    </header>
-
-                    <div class="space-y-12">
-
-                        <div class="glass-card p-8 rounded-xl hover:bg-white transition-colors">
-                            <h3 class="font-heading text-xl text-charcoal-800 font-bold">Christ University, Bangalore
-                            </h3>
-                            <p class="text-charcoal-600">MSc, Health Psychology</p>
-                            <p class="text-sm text-gold-500 mt-2">Expected June 2025</p>
-                        </div>
-
-                        <div class="glass-card p-8 rounded-xl hover:bg-white transition-colors">
-                            <h3 class="font-heading text-xl text-charcoal-800 font-bold">University of Chicago</h3>
-                            <p class="text-charcoal-600">Neuroanatomy Course</p>
-                            <p class="text-sm text-charcoal-500 mt-2">Nov 2022 - Jan 2023</p>
-                        </div>
-
-                        <div class="glass-card p-8 rounded-xl hover:bg-white transition-colors">
-                            <h3 class="font-heading text-xl text-charcoal-800 font-bold">IILM University, Greater Noida
-                            </h3>
-                            <p class="text-charcoal-600">Bachelor of Arts, Psychology</p>
-                            <p class="text-sm text-charcoal-500 mt-2">Sep 2022 - May 2025</p>
-                        </div>
-
-                        <div class="glass-card p-8 rounded-xl hover:bg-white transition-colors">
-                            <h3 class="font-heading text-xl text-charcoal-800 font-bold">Delhi Public School</h3>
-                            <p class="text-charcoal-600">School Education</p>
-                            <p class="text-sm text-charcoal-500 mt-2">May 2005 - June 2021</p>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Writings (Medium) - Minimalist -->
-    <section id="writings" class="py-32">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
-                <div>
-                    <h2 class="font-heading text-4xl text-charcoal-800 mb-2">Thoughts & <span
-                            class="italic text-gold-400">Musings</span></h2>
-                </div>
-                <a href="https://medium.com/@natanyakhanna5" target="_blank"
-                    class="hidden md:inline-flex px-6 py-3 border border-charcoal-200 text-charcoal-600 rounded-full hover:bg-charcoal-800 hover:text-white transition-all duration-300">View
-                    All Articles</a>
-            </div>
-
-            <div id="blog-loading" class="text-center py-20">
-                <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gold-400">
-                </div>
-            </div>
-
-            <div id="blog-posts" class="grid md:grid-cols-3 gap-8 hidden">
-                <!-- Dynamic Content -->
-            </div>
-
-            <div id="blog-error" class="hidden text-center text-charcoal-500">
-                <p>Unable to retrieve latest articles.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Connect -->
-    <section id="connect" class="py-32 relative overflow-hidden bg-charcoal-800 text-cream-50">
-
-        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center reveal">
-            <h2 class="font-heading text-5xl md:text-7xl mb-8 tracking-tighter">Let's <span
-                    class="italic text-gold-400">Connect</span></h2>
-            <p class="text-xl text-charcoal-400 mb-16 max-w-2xl mx-auto">Open for research collaborations and academic
-                discussions.</p>
-
-            <div class="flex flex-col md:flex-row justify-center gap-8">
-                <a href="mailto:natanyakhanna5@gmail.com"
-                    class="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-gold-400 hover:text-white hover:border-gold-400 transition-all duration-300 flex items-center gap-3 justify-center">
-                    <span>📧</span> natanyakhanna5@gmail.com
-                </a>
-
-                <a href="https://www.linkedin.com/in/natanyakhanna-01411b248" target="_blank"
-                    class="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all duration-300 flex items-center gap-3 justify-center">
-                    <span>💼</span> LinkedIn Profile
-                </a>
-            </div>
-
-            <footer class="mt-32 text-charcoal-500 text-sm">
-                <p>&copy; <span id="current-year"></span> Natanya Khanna. All rights reserved.</p>
-            </footer>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
-</body>
-
-</html>
-<meta name="description"
-    content="Exploring the Human Mind. Portfolio of Natanya Khanna, Masters in Psychology Candidate. Specializing in Neuropsychology, Health, and Wellbeing.">
-
-<!-- Design System Fonts: Playfair Display (Headings) + Inter (Body) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-    rel="stylesheet">
-
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    deep: {
-                        900: '#0F0F23', // Deep Space Background
-                        800: '#181832',
-                    },
-                    electric: {
-                        500: '#7C3AED', // Electric Violet
-                        400: '#A78BFA', // Soft Lavender
-                    },
-                    neon: {
-                        500: '#F43F5E', // Neon Rose
-                    },
-                    starlight: '#E2E8F0',
-                },
-                fontFamily: {
-                    heading: ['"Playfair Display"', 'serif'],
-                    body: ['"Inter"', 'sans-serif'],
-                },
-                backgroundImage: {
-                    'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                },
-                animation: {
-                    'float': 'float 6s ease-in-out infinite',
-                    'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                },
-                keyframes: {
-                    float: {
-                        '0%, 100%': { transform: 'translateY(0)' },
-                        '50%': { transform: 'translateY(-20px)' },
-                    }
-                }
-            }
-        }
-    }
-</script>
-
-<!-- Custom Styles for Liquid Glass -->
-<style>
-    body {
-        background-color: #0F0F23;
-        color: #E2E8F0;
-        overflow-x: hidden;
-    }
-
-    /* Liquid Glass Card */
-    .glass-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .glass-card:hover {
-        border-color: rgba(124, 58, 237, 0.3);
-        /* Electric Violet border on hover */
-        box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
-    }
-
-    /* Glowing Text */
-    .text-glow {
-        text-shadow: 0 0 20px rgba(167, 139, 250, 0.3);
-    }
-
-    /* Scrollbar */
-    ::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: #0F0F23;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: #33334d;
-        border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: #7C3AED;
-    }
-
-    .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-    }
-
-    .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Gradient Text */
-    .gradient-text {
-        background: linear-gradient(135deg, #E2E8F0 0%, #A78BFA 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-</style>
-</head>
-
-<body class="font-body selection:bg-electric-500 selection:text-white">
-
-    <!-- Background Canvas -->
-    <canvas id="neural-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-60"></canvas>
-
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent">
-        <div class="max-w-7xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="#home" class="text-xl md:text-2xl font-heading font-bold gradient-text tracking-wide">
-                    Natanya Khanna
-                </a>
-
-                <!-- Desktop Menu -->
-                <ul class="hidden md:flex space-x-10 text-sm font-medium tracking-widest uppercase">
-                    <li><a href="#about"
-                            class="text-gray-400 hover:text-electric-400 transition-colors duration-300">About</a></li>
-                    <li><a href="#experience"
-                            class="text-gray-400 hover:text-electric-400 transition-colors duration-300">Experience</a>
-                    </li>
-                    <li><a href="#writings"
-                            class="text-gray-400 hover:text-electric-400 transition-colors duration-300">Writings</a>
-                    </li>
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <ul class="flex flex-col space-y-4 mt-6 text-sm font-medium text-slate-600">
+                    <li><a href="#about" class="block hover:text-primary-600 transition-colors">About</a></li>
+                    <li><a href="#experience" class="block hover:text-primary-600 transition-colors">Experience</a></li>
+                    <li><a href="#education" class="block hover:text-primary-600 transition-colors">Education</a></li>
                     <li><a href="#connect"
-                            class="px-6 py-2 border border-electric-500/50 text-electric-400 rounded-full hover:bg-electric-500/10 hover:border-electric-500 transition-all duration-300">Connect</a>
+                            class="block px-6 py-2 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-all text-center">Connect</a>
                     </li>
                 </ul>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="M4 8h16M4 16h16"></path>
-                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
             </div>
-
-            <!-- Mobile Menu -->
-            <ul id="mobile-menu"
-                class="hidden md:hidden absolute top-full left-0 w-full bg-[#0F0F23]/95 backdrop-blur-xl border-b border-white/10 px-6 py-8 space-y-6 text-center">
-                <li><a href="#about" class="block text-lg text-gray-300 hover:text-white transition-colors">About</a>
-                </li>
-                <li><a href="#experience"
-                        class="block text-lg text-gray-300 hover:text-white transition-colors">Experience</a></li>
-                <li><a href="#writings"
-                        class="block text-lg text-gray-300 hover:text-white transition-colors">Writings</a></li>
-                <li><a href="#connect" class="block text-lg text-electric-400 font-bold">Connect</a></li>
-            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        <!-- Ambient Glow -->
-        <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-electric-500/10 rounded-full blur-[120px] -z-10 animate-pulse-slow">
-        </div>
+    <section id="home"
+        class="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-24 sm:pt-20 relative gradient-bg overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center space-y-8 sm:space-y-10 fade-in visible">
 
-        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <!-- Profile Image -->
+            <div class="relative inline-block">
+                <div class="absolute inset-0 bg-primary-200 rounded-full blur-2xl opacity-40"></div>
+                <div class="relative w-40 h-40 sm:w-48 sm:h-48 mx-auto glass rounded-full p-2 shadow-xl">
+                    <img src="assets/images/profile.jpg" alt="Natanya Khanna - Psychology Student"
+                        class="w-full h-full rounded-full object-cover">
+                </div>
+            </div>
 
-            <!-- Hero Wrapper -->
-            <div class="space-y-8 reveal active">
-
-                <!-- Profile Image with Orbit -->
-                <div class="relative w-40 h-40 md:w-56 md:h-56 mx-auto mb-12">
-                    <div class="absolute inset-0 rounded-full border border-electric-500/30 animate-spin"
-                        style="animation-duration: 15s;"></div>
-                    <div class="absolute inset-2 rounded-full border border-neon-500/20 animate-spin"
-                        style="animation-duration: 20s; animation-direction: reverse;"></div>
-                    <div
-                        class="w-full h-full rounded-full p-2 bg-gradient-to-br from-electric-900 to-transparent backdrop-blur-sm">
-                        <img src="assets/images/profile.jpg" alt="Natanya Khanna"
-                            class="w-full h-full rounded-full object-cover shadow-2xl shadow-electric-500/20">
-                    </div>
+            <div class="space-y-4 sm:space-y-6">
+                <div class="inline-block glass px-4 sm:px-6 py-2 rounded-full">
+                    <span class="text-primary-600 font-semibold text-xs sm:text-sm">Psychology & Neuroscience</span>
                 </div>
 
-                <!-- Titles -->
-                <h1 class="font-heading italic text-6xl md:text-8xl lg:text-9xl gradient-text mb-4 tracking-tighter">
+                <h1
+                    class="text-5xl sm:text-7xl md:text-8xl font-serif font-bold text-slate-800 leading-tight italic px-4">
                     Natanya Khanna
                 </h1>
 
-                <p class="font-body text-lg md:text-xl text-gray-400 max-w-2xl mx-auto tracking-wide leading-relaxed">
-                    ACCESSING THE ARCHITECTURE OF THE HUMAN MIND
+                <p class="text-lg sm:text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto px-4">
+                    Accessing the architecture of the human mind
                 </p>
 
-                <!-- Status Badge -->
-                <div
-                    class="inline-flex items-center gap-3 px-6 py-3 rounded-full glass-card border-electric-500/20 mt-8">
-                    <span class="relative flex h-3 w-3">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-electric-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-electric-500"></span>
-                    </span>
-                    <span class="text-sm font-medium text-gray-300">MSc Psychology candidate at <span
-                            class="text-electric-400">Christ University</span></span>
+                <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-4 px-4">
+                    <a href="#connect"
+                        class="px-6 sm:px-8 py-3 bg-primary-600 text-white rounded-full font-medium hover:bg-primary-700 transition-all shadow-lg hover:shadow-xl">
+                        Get in Touch
+                    </a>
+                    <a href="#about"
+                        class="px-6 sm:px-8 py-3 glass text-slate-700 rounded-full font-medium hover:text-primary-600 transition-all">
+                        Learn More
+                    </a>
                 </div>
-
-            </div>
-
-            <!-- Scroll Indicator -->
-            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-32 relative">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
+    <section id="about" class="py-20 sm:py-32 px-4 sm:px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 sm:gap-16">
 
-                <!-- Text Content -->
-                <div class="reveal space-y-8">
-                    <h2 class="font-heading text-5xl md:text-6xl text-white leading-tight">
-                        Bridging <span class="text-electric-400 italic">Science</span> <br> & Spirituality.
+                <div class="fade-in space-y-6 sm:space-y-8">
+                    <h2 class="text-4xl sm:text-5xl font-serif font-bold text-slate-800 italic">
+                        The Architecture <br>of the <span class="text-primary-600">Self</span>
                     </h2>
-                    <p class="text-lg text-gray-400 leading-loose">
-                        My work explores the intricate connections between neurobiology and conscious experience. I am
-                        dedicated to understanding how biological mechanisms underscore psychological resilience,
-                        particularly in the context of <span
-                            class="text-white border-b border-electric-500/50 pb-1">Chronic Illness</span>.
+                    <div class="space-y-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+                        <p>
+                            I am a <strong class="text-slate-800">Psychology student</strong> dedicated to creating
+                            awareness for "invisible disabilities," specifically among EDS and Hypermobility Spectrum
+                            Disorder patients.
+                        </p>
+                        <p>
+                            As a writer, poetess, and public speaker, I explore the connection between neurobiology and
+                            conscious experience.
+                        </p>
+                        <p>
+                            My journey is rooted in ancient psychology—understanding the "Self" via Vedic literature
+                            while advocating for the Chronic Pain community.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 sm:gap-3 pt-4">
+                        <span class="glass px-4 sm:px-5 py-2 rounded-full text-slate-700 text-xs sm:text-sm">Mental
+                            Health Assessment</span>
+                        <span class="glass px-4 sm:px-5 py-2 rounded-full text-slate-700 text-xs sm:text-sm">Public
+                            Speaking</span>
+                        <span
+                            class="glass px-4 sm:px-5 py-2 rounded-full text-slate-700 text-xs sm:text-sm">Neuropsychology</span>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <div class="glass p-8 sm:p-10 rounded-3xl">
+                        <h3 class="text-2xl sm:text-3xl font-serif font-bold text-slate-800 mb-6 sm:mb-8 italic">Honors
+                            & Awards</h3>
+
+                        <div class="space-y-4 sm:space-y-6">
+                            <div
+                                class="flex items-center gap-4 sm:gap-5 p-3 sm:p-4 rounded-2xl hover:bg-white/60 transition-colors">
+                                <div
+                                    class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-primary-400 to-primary-600 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl shadow-lg flex-shrink-0">
+                                    🥇
+                                </div>
+                                <div>
+                                    <h4 class="text-base sm:text-lg font-bold text-slate-800">Gold Medalist</h4>
+                                    <p class="text-slate-600 text-sm">Entrepreneurship</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-center gap-4 sm:gap-5 p-3 sm:p-4 rounded-2xl hover:bg-white/60 transition-colors">
+                                <div
+                                    class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-primary-300 to-primary-500 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl shadow-lg flex-shrink-0">
+                                    🏆
+                                </div>
+                                <div>
+                                    <h4 class="text-base sm:text-lg font-bold text-slate-800">Olympiad Achiever</h4>
+                                    <p class="text-slate-600 text-sm">Competitive Excellence</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-center gap-4 sm:gap-5 p-3 sm:p-4 rounded-2xl hover:bg-white/60 transition-colors">
+                                <div
+                                    class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-primary-200 to-primary-400 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl shadow-lg flex-shrink-0">
+                                    🛡️
+                                </div>
+                                <div>
+                                    <h4 class="text-base sm:text-lg font-bold text-slate-800">QPR Gatekeeper</h4>
+                                    <p class="text-slate-600 text-sm">Suicide Prevention Certified</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 sm:py-32 px-4 sm:px-6 bg-slate-50/50">
+        <div class="max-w-5xl mx-auto">
+            <h2
+                class="text-3xl sm:text-4xl font-serif font-bold text-slate-800 text-center mb-12 sm:mb-16 fade-in italic">
+                Professional Timeline
+            </h2>
+
+            <div class="space-y-6">
+                <article class="glass p-6 sm:p-8 rounded-3xl fade-in">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-start mb-4 gap-3 sm:gap-4">
+                        <div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-2">Centre for Neurodiversity</h3>
+                            <p class="text-primary-600 font-semibold text-sm sm:text-base">Intern and Volunteer</p>
+                        </div>
+                        <div
+                            class="px-3 sm:px-4 py-1.5 bg-primary-100 text-primary-700 rounded-full font-medium text-xs sm:text-sm self-start">
+                            Current
+                        </div>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                        Leading initiatives for neurodiversity awareness and research. Bengaluru, India.
                     </p>
-                    <div class="grid grid-cols-2 gap-6 pt-4">
-                        <div class="glass-card rounded-xl p-6 hover:-translate-y-2 transition-transform duration-300">
-                            <div class="text-3xl mb-2">🧠</div>
-                            <h3 class="text-white font-heading text-xl">Neuropsychology</h3>
-                            <p class="text-sm text-gray-500 mt-2">Brain-behavior relationships</p>
-                        </div>
-                        <div class="glass-card rounded-xl p-6 hover:-translate-y-2 transition-transform duration-300">
-                            <div class="text-3xl mb-2">🌿</div>
-                            <h3 class="text-white font-heading text-xl">Wellbeing</h3>
-                            <p class="text-sm text-gray-500 mt-2">Holistic health approaches</p>
-                        </div>
-                    </div>
-                </div>
+                </article>
 
-                <!-- Visual/Stats -->
-                <div class="reveal delay-200">
-                    <div class="glass-card rounded-2xl p-8 md:p-12 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-64 h-64 bg-neon-500/10 rounded-full blur-[80px] -z-10">
-                        </div>
-
-                        <div class="space-y-10">
-                            <div>
-                                <div class="text-5xl font-heading text-white mb-2">4.0</div>
-                                <div class="text-sm text-gray-400 uppercase tracking-widest">GPA / Academic Excellence
-                                </div>
-                                <div class="w-full h-1 bg-white/10 mt-4 rounded-full overflow-hidden">
-                                    <div class="h-full bg-electric-500 w-[98%]"></div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="text-5xl font-heading text-white mb-2">3+</div>
-                                <div class="text-sm text-gray-400 uppercase tracking-widest">Years Research</div>
-                                <div class="w-full h-1 bg-white/10 mt-4 rounded-full overflow-hidden">
-                                    <div class="h-full bg-neon-500 w-[85%]"></div>
-                                </div>
-                            </div>
-
-                            <a href="#contact"
-                                class="inline-flex items-center text-electric-400 hover:text-white transition-colors gap-2 mt-4 font-medium">
-                                View Curriculum Vitae <span class="text-lg">→</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience & Education -->
-    <section id="experience" class="py-32 relative bg-[#0F0F23]">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="font-heading text-4xl md:text-5xl text-center text-white mb-20 reveal">Timeline of <span
-                    class="italic text-electric-400">Growth</span></h2>
-
-            <div class="space-y-12">
-
-                <!-- Item 1 -->
-                <div
-                    class="glass-card rounded-2xl p-8 md:p-10 relative group reveal hover:border-electric-500/30 transition-all duration-500">
-                    <div
-                        class="absolute left-0 top-1/2 -translate-x-1/2 w-4 h-4 bg-electric-500 rounded-full hidden md:block shadow-[0_0_15px_rgba(124,58,237,0.5)]">
-                    </div>
-
-                    <div class="flex flex-col md:flex-row gap-6 md:items-center justify-between mb-6">
+                <article class="glass p-6 sm:p-8 rounded-3xl fade-in">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-start mb-4 gap-3 sm:gap-4">
                         <div>
-                            <h3
-                                class="text-2xl font-headings text-white font-bold group-hover:text-electric-400 transition-colors">
-                                Masters in Psychology</h3>
-                            <p class="text-lg text-gray-400">Health and Wellbeing</p>
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-2">Synapses Neuropsychiatry</h3>
+                            <p class="text-primary-600 font-semibold text-sm sm:text-base">Clinical Intern</p>
                         </div>
-                        <div class="text-right">
-                            <span
-                                class="inline-block px-4 py-1 rounded-full bg-white/5 text-sm text-gray-300 border border-white/10">2024
-                                - Present</span>
-                            <p class="text-sm text-electric-400 mt-1">Christ University</p>
+                        <div
+                            class="px-3 sm:px-4 py-1.5 glass text-slate-600 rounded-full font-medium text-xs sm:text-sm self-start">
+                            2023 - 2024
                         </div>
                     </div>
-                    <p class="text-gray-400 leading-relaxed">Specializing in clinical interventions and health
-                        psychology frameworks. Leading research on psychosomatic disorders.</p>
-                </div>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                        Specializing in neuropsychiatric assessments and clinical observations. Delhi, India.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
 
-                <!-- Item 2 -->
-                <div
-                    class="glass-card rounded-2xl p-8 md:p-10 relative group reveal hover:border-neon-500/30 transition-all duration-500">
+    <!-- Education Section -->
+    <section id="education" class="py-20 sm:py-32 px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2
+                class="text-3xl sm:text-4xl font-serif font-bold text-slate-800 text-center mb-12 sm:mb-16 fade-in italic">
+                Academic Journey
+            </h2>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <article class="glass p-6 sm:p-8 rounded-3xl fade-in">
+                    <div class="text-primary-600 font-bold text-xs sm:text-sm mb-3 sm:mb-4">2025</div>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-2">MSc Health Psychology</h3>
+                    <p class="text-slate-600 text-sm">Christ University</p>
+                </article>
+
+                <article class="glass p-6 sm:p-8 rounded-3xl fade-in">
+                    <div class="text-primary-600 font-bold text-xs sm:text-sm mb-3 sm:mb-4">2023</div>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-2">Neuroanatomy</h3>
+                    <p class="text-slate-600 text-sm">University of Chicago</p>
+                </article>
+
+                <article class="glass p-6 sm:p-8 rounded-3xl fade-in">
+                    <div class="text-primary-600 font-bold text-xs sm:text-sm mb-3 sm:mb-4">2025</div>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-2">BA Psychology</h3>
+                    <p class="text-slate-600 text-sm">IILM University</p>
+                </article>
+
+                <article class="glass p-6 sm:p-8 rounded-3xl fade-in">
+                    <div class="text-primary-600 font-bold text-xs sm:text-sm mb-3 sm:mb-4">2021</div>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-2">Schooling</h3>
+                    <p class="text-slate-600 text-sm">Delhi Public School</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect" class="py-20 sm:py-32 px-4 sm:px-6 relative">
+        <div class="max-w-4xl mx-auto text-center fade-in">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-slate-800 mb-4 sm:mb-6 italic">
+                Let's Connect
+            </h2>
+            <p class="text-lg sm:text-xl text-slate-600 mb-10 sm:mb-12 px-4">Open for research collaborations and
+                academic discussions</p>
+
+            <div class="flex flex-wrap justify-center gap-6 sm:gap-8 mb-12 sm:mb-16">
+                <a href="mailto:natanyakhanna5@gmail.com" class="group text-center" aria-label="Email Natanya Khanna">
                     <div
-                        class="absolute left-0 top-1/2 -translate-x-1/2 w-4 h-4 bg-neon-500 rounded-full hidden md:block shadow-[0_0_15px_rgba(244,63,94,0.5)]">
+                        class="glass w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center text-3xl sm:text-4xl hover:bg-primary-50 hover:scale-110 transition-all mb-2">
+                        📧
                     </div>
+                    <p class="text-slate-600 text-xs sm:text-sm font-medium">Email</p>
+                </a>
 
-                    <div class="flex flex-col md:flex-row gap-6 md:items-center justify-between mb-6">
-                        <div>
-                            <h3
-                                class="text-2xl font-headings text-white font-bold group-hover:text-neon-500 transition-colors">
-                                BSc Psychology (Honours)</h3>
-                            <p class="text-lg text-gray-400">Research Focus</p>
-                        </div>
-                        <div class="text-right">
-                            <span
-                                class="inline-block px-4 py-1 rounded-full bg-white/5 text-sm text-gray-300 border border-white/10">2021
-                                - 2024</span>
-                            <p class="text-sm text-neon-500 mt-1">Christ University</p>
-                        </div>
+                <a href="https://www.linkedin.com/in/natanyakhanna-01411b248" target="_blank" rel="noopener noreferrer"
+                    class="group text-center" aria-label="LinkedIn Profile">
+                    <div
+                        class="glass w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center text-3xl sm:text-4xl hover:bg-primary-50 hover:scale-110 transition-all mb-2">
+                        💼
                     </div>
-                    <p class="text-gray-400 leading-relaxed">Graduated with distinction. Conducted independent research
-                        on cognitive behavioral patterns in young adults.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Writings (Medium) -->
-    <section id="writings" class="py-32 bg-gradient-to-b from-[#0F0F23] to-[#0a0a1a]">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
-                <div>
-                    <h2 class="font-heading text-4xl md:text-5xl text-white mb-2">Latest <span
-                            class="italic text-gray-400">Thoughts</span></h2>
-                    <p class="text-gray-500">Curated articles from my Medium publication</p>
-                </div>
-                <a href="https://medium.com/@natanyakhanna5" target="_blank"
-                    class="hidden md:inline-flex px-6 py-3 border border-white/20 text-white rounded-full hover:bg-white hover:text-black transition-all duration-300">View
-                    All Articles</a>
-            </div>
-
-            <div id="blog-loading" class="text-center py-20">
-                <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-electric-500">
-                </div>
-            </div>
-
-            <div id="blog-posts" class="grid md:grid-cols-3 gap-8 hidden">
-                <!-- Dynamic Content -->
-            </div>
-
-            <div id="blog-error" class="hidden text-center">
-                <p class="text-gray-400">Unable to signal the mothership (Medium API).</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Connect -->
-    <section id="connect" class="py-32 relative overflow-hidden">
-        <!-- Glow effects -->
-        <div
-            class="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-t from-electric-900/50 to-transparent pointer-events-none">
-        </div>
-        <div
-            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-electric-500/10 blur-[100px] rounded-full pointer-events-none">
-        </div>
-
-        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center reveal">
-            <h2 class="font-heading text-5xl md:text-7xl text-white mb-8 tracking-tighter">Let's <span
-                    class="italic text-electric-400">Connect</span></h2>
-            <p class="text-xl text-gray-400 mb-16 max-w-2xl mx-auto">Open for research collaborations, academic
-                discussions, or just a conversation about the cosmos of the mind.</p>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <a href="mailto:natanyakhanna5@gmail.com"
-                    class="glass-card p-10 rounded-2xl group hover:bg-electric-500/10 transition-all duration-300">
-                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">📧</div>
-                    <div class="text-white font-bold text-lg mb-1">Email</div>
-                    <div class="text-sm text-gray-500 group-hover:text-electric-300">Send a Message</div>
+                    <p class="text-slate-600 text-xs sm:text-sm font-medium">LinkedIn</p>
                 </a>
 
-                <a href="https://www.linkedin.com/in/natanyakhanna" target="_blank"
-                    class="glass-card p-10 rounded-2xl group hover:bg-blue-500/10 transition-all duration-300">
-                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">💼</div>
-                    <div class="text-white font-bold text-lg mb-1">LinkedIn</div>
-                    <div class="text-sm text-gray-500 group-hover:text-blue-300">Professional Network</div>
-                </a>
-
-                <a href="https://medium.com/@natanyakhanna5" target="_blank"
-                    class="glass-card p-10 rounded-2xl group hover:bg-white/10 transition-all duration-300">
-                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">✍️</div>
-                    <div class="text-white font-bold text-lg mb-1">Medium</div>
-                    <div class="text-sm text-gray-500 group-hover:text-white">Read Blog</div>
+                <a href="https://medium.com/@natanyakhanna5" target="_blank" rel="noopener noreferrer"
+                    class="group text-center" aria-label="Medium Blog">
+                    <div
+                        class="glass w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center text-3xl sm:text-4xl hover:bg-primary-50 hover:scale-110 transition-all mb-2">
+                        ✍️
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm font-medium">Medium</p>
                 </a>
             </div>
 
-            <footer class="mt-32 text-gray-600 text-sm">
-                <p>&copy; <span id="current-year"></span> Natanya Khanna. All systems nominal.</p>
+            <footer class="text-slate-500 text-xs sm:text-sm">
+                &copy; <span id="year"></span> Natanya Khanna. All rights reserved.
             </footer>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script>
+        // Simple Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
