@@ -6,12 +6,12 @@ let particles = [];
 let connections = [];
 let width, height;
 
-// Configuration for "Deep Space" theme
+// Configuration for "White Cream" theme
 const CONFIG = {
-    particleCount: 150, // Higher density
+    particleCount: 120, // Slightly reduced for elegance
     connectionDistance: 120,
     mouseDistance: 200,
-    colors: ['124, 58, 237', '244, 63, 94', '226, 232, 240'] // Violet, Rose, White
+    colors: ['212, 175, 55', '68, 64, 60', '120, 113, 108'] // Gold, Charcoal, Stone
 };
 
 // Resize Handling
@@ -101,7 +101,7 @@ function animate() {
 
             if (distance < CONFIG.connectionDistance) {
                 const opacity = 1 - (distance / CONFIG.connectionDistance);
-                ctx.strokeStyle = `rgba(124, 58, 237, ${opacity * 0.4})`; // Violet connections
+                ctx.strokeStyle = `rgba(212, 175, 55, ${opacity * 0.3})`; // Gold connections
                 ctx.beginPath();
                 ctx.moveTo(particles[i].x, particles[i].y);
                 ctx.lineTo(particles[j].x, particles[j].y);
@@ -150,10 +150,10 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        navbar.classList.add('bg-[#0F0F23]/80', 'backdrop-blur-md', 'border-white/10', 'shadow-lg');
+        navbar.classList.add('bg-cream-50/90', 'backdrop-blur-md', 'border-cream-200', 'shadow-sm');
         navbar.classList.remove('border-transparent');
     } else {
-        navbar.classList.remove('bg-[#0F0F23]/80', 'backdrop-blur-md', 'border-white/10', 'shadow-lg');
+        navbar.classList.remove('bg-cream-50/90', 'backdrop-blur-md', 'border-cream-200', 'shadow-sm');
         navbar.classList.add('border-transparent');
     }
 });

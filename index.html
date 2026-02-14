@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Natanya Khanna | Psychology & Neuroscience Portfolio</title>
     <meta name="description"
-        content="Exploring the Human Mind. Portfolio of Natanya Khanna, Masters in Psychology Candidate. Specializing in Neuropsychology, Health, and Wellbeing.">
+        content="Psychology student | Creating awareness for invisible disabilities | MSc Psychology - Health and Wellbeing candidate.">
 
     <!-- Design System Fonts: Playfair Display (Headings) + Inter (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind CSS -->
@@ -22,25 +22,26 @@
             theme: {
                 extend: {
                     colors: {
-                        deep: {
-                            900: '#0F0F23', // Deep Space Background
-                            800: '#181832',
+                        cream: {
+                            50: '#FAFAF9', // Warm Alabaster Background
+                            100: '#F5F5F4',
+                            200: '#E7E5E4',
                         },
-                        electric: {
-                            500: '#7C3AED', // Electric Violet
-                            400: '#A78BFA', // Soft Lavender
+                        gold: {
+                            400: '#D4AF37', // Muted Gold
+                            500: '#B4942D',
                         },
-                        neon: {
-                            500: '#F43F5E', // Neon Rose
+                        charcoal: {
+                            800: '#44403C', // Warm Dark Grey
+                            600: '#78716C', // Secondary Text
                         },
-                        starlight: '#E2E8F0',
+                        sage: {
+                            500: '#84A98C', // Soft Sage Accent
+                        },
                     },
                     fontFamily: {
                         heading: ['"Playfair Display"', 'serif'],
                         body: ['"Inter"', 'sans-serif'],
-                    },
-                    backgroundImage: {
-                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
@@ -49,7 +50,7 @@
                     keyframes: {
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
+                            '50%': { transform: 'translateY(-10px)' },
                         }
                     }
                 }
@@ -57,32 +58,29 @@
         }
     </script>
 
-    <!-- Custom Styles for Liquid Glass -->
+    <!-- Custom Styles for Luxury Glass -->
     <style>
         body {
-            background-color: #0F0F23;
-            color: #E2E8F0;
+            background-color: #FAFAF9;
+            color: #44403C;
             overflow-x: hidden;
         }
 
-        /* Liquid Glass Card */
+        /* Luxury Glass Card */
         .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.1);
+            /* Gold shadow */
         }
 
         .glass-card:hover {
-            border-color: rgba(124, 58, 237, 0.3);
-            /* Electric Violet border on hover */
-            box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
-        }
-
-        /* Glowing Text */
-        .text-glow {
-            text-shadow: 0 0 20px rgba(167, 139, 250, 0.3);
+            border-color: rgba(212, 175, 55, 0.4);
+            /* Gold border on hover */
+            box-shadow: 0 20px 50px -10px rgba(212, 175, 55, 0.2);
+            transform: translateY(-5px);
         }
 
         /* Scrollbar */
@@ -91,22 +89,23 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: #0F0F23;
+            background: #FAFAF9;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #33334d;
+            background: #D6D3D1;
             border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #7C3AED;
+            background: #D4AF37;
         }
 
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+            transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+            /* Elegant easing */
         }
 
         .reveal.active {
@@ -114,13 +113,466 @@
             transform: translateY(0);
         }
 
-        /* Gradient Text */
+        /* Gold Gradient Text */
         .gradient-text {
-            background: linear-gradient(135deg, #E2E8F0 0%, #A78BFA 100%);
+            background: linear-gradient(135deg, #44403C 0%, #D4AF37 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
     </style>
+</head>
+
+<body class="font-body selection:bg-gold-400 selection:text-white">
+
+    <!-- Background Canvas -->
+    <canvas id="neural-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-30"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent bg-cream-50/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 py-5">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-2xl font-heading font-bold text-charcoal-800 tracking-wide">
+                    Natanya<span class="text-gold-400">.</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-12 text-sm font-medium tracking-widest uppercase">
+                    <li><a href="#about"
+                            class="text-charcoal-600 hover:text-gold-400 transition-colors duration-300">About</a></li>
+                    <li><a href="#experience"
+                            class="text-charcoal-600 hover:text-gold-400 transition-colors duration-300">Experience</a>
+                    </li>
+                    <li><a href="#education"
+                            class="text-charcoal-600 hover:text-gold-400 transition-colors duration-300">Education</a>
+                    </li>
+                    <li><a href="#writings"
+                            class="text-charcoal-600 hover:text-gold-400 transition-colors duration-300">Thoughts</a>
+                    </li>
+                    <li><a href="#connect"
+                            class="px-6 py-2 border border-gold-400 text-gold-500 rounded-full hover:bg-gold-400 hover:text-white transition-all duration-300">Connect</a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-charcoal-800 focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M4 8h16M4 16h16"></path>
+                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <ul id="mobile-menu"
+                class="hidden md:hidden absolute top-full left-0 w-full bg-cream-50 shadow-xl border-t border-cream-200 px-6 py-8 space-y-6 text-center">
+                <li><a href="#about"
+                        class="block text-lg text-charcoal-600 hover:text-gold-400 transition-colors">About</a></li>
+                <li><a href="#experience"
+                        class="block text-lg text-charcoal-600 hover:text-gold-400 transition-colors">Experience</a>
+                </li>
+                <li><a href="#education"
+                        class="block text-lg text-charcoal-600 hover:text-gold-400 transition-colors">Education</a></li>
+                <li><a href="#writings"
+                        class="block text-lg text-charcoal-600 hover:text-gold-400 transition-colors">Thoughts</a></li>
+                <li><a href="#connect" class="block text-lg text-gold-500 font-bold">Connect</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+
+            <!-- Hero Wrapper -->
+            <div class="space-y-8 reveal active">
+
+                <!-- Profile Image with Gold Ring -->
+                <div class="relative w-48 h-48 md:w-60 md:h-60 mx-auto mb-12">
+                    <div class="absolute inset-0 rounded-full border border-gold-400/30 animate-spin"
+                        style="animation-duration: 25s;"></div>
+                    <div class="absolute inset-3 rounded-full border border-charcoal-600/10 animate-spin"
+                        style="animation-duration: 30s; animation-direction: reverse;"></div>
+                    <div class="w-full h-full rounded-full p-2 bg-white shadow-xl">
+                        <img src="assets/images/profile.jpg" alt="Natanya Khanna"
+                            class="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                    </div>
+                </div>
+
+                <!-- Titles -->
+                <h1 class="font-heading text-6xl md:text-8xl text-charcoal-800 mb-6 tracking-tight">
+                    Natanya Khanna
+                </h1>
+
+                <div class="space-y-3 font-body text-lg md:text-xl text-charcoal-600 max-w-3xl mx-auto leading-relaxed">
+                    <p>MSc Psychology - Health and Wellbeing | Spirituality and Vedic Psychology</p>
+                    <p>Chronic Illnesses Awareness | QPR Training Gatekeeper</p>
+                    <p class="text-sm uppercase tracking-widest mt-4 text-gold-500 font-semibold">Bengaluru, Karnataka,
+                        India</p>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+                    <svg class="w-6 h-6 text-charcoal-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-20 items-start">
+
+                <!-- Bio -->
+                <div class="reveal space-y-8">
+                    <h2 class="font-heading text-5xl text-charcoal-800">
+                        The <span class="italic text-gold-400">Architecture</span> of the Self.
+                    </h2>
+                    <div class="space-y-6 text-lg text-charcoal-600 leading-loose">
+                        <p>
+                            I am a <span class="font-semibold text-charcoal-800">Psychology student</span> dedicated to
+                            creating awareness for "invisible disabilities," specifically among EDS and Hypermobility
+                            Spectrum Disorder patients.
+                        </p>
+                        <p>
+                            As a <span class="italic">writer, poetess, anchor & host, and public speaker</span>, I
+                            admire brain sciences and dwell on the importance of neuropsychological implications in
+                            research.
+                        </p>
+                        <p>
+                            My journey is a deep soul search rooted in ancient psychology—understanding the "Self" via
+                            Vedic literature and scriptures. I am a beginner investor at the NSE and strive to be a
+                            voice for the Chronic Pain and Illness community.
+                        </p>
+                    </div>
+
+                    <div class="pt-8">
+                        <h3 class="font-heading text-2xl text-charcoal-800 mb-6">Top Skills</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-4 py-2 bg-white border border-cream-200 text-charcoal-600 rounded-full text-sm shadow-sm">Mental
+                                Health Assessment</span>
+                            <span
+                                class="px-4 py-2 bg-white border border-cream-200 text-charcoal-600 rounded-full text-sm shadow-sm">Interpersonal
+                                Communication</span>
+                            <span
+                                class="px-4 py-2 bg-white border border-cream-200 text-charcoal-600 rounded-full text-sm shadow-sm">Working
+                                with Psychologists</span>
+                            <span
+                                class="px-4 py-2 bg-white border border-cream-200 text-charcoal-600 rounded-full text-sm shadow-sm">Public
+                                Speaking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Awards Card -->
+                <div class="reveal delay-200">
+                    <div class="glass-card rounded-2xl p-10 md:p-12 relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-gold-400/20 rounded-full blur-[50px]"></div>
+
+                        <h3 class="font-heading text-3xl text-charcoal-800 mb-8">Honors & Awards</h3>
+
+                        <div class="space-y-8">
+                            <div class="flex gap-4 items-start">
+                                <div class="text-2xl mt-1">🥇</div>
+                                <div>
+                                    <h4 class="font-bold text-charcoal-800 text-lg">Gold Medalist in Entrepreneurship
+                                    </h4>
+                                    <p class="text-charcoal-600 text-sm">Academic Excellence</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4 items-start">
+                                <div class="text-2xl mt-1">🏆</div>
+                                <div>
+                                    <h4 class="font-bold text-charcoal-800 text-lg">Olympiad Achiever</h4>
+                                    <p class="text-charcoal-600 text-sm">Competitive Achievement</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4 items-start">
+                                <div class="text-2xl mt-1">🛡️</div>
+                                <div>
+                                    <h4 class="font-bold text-charcoal-800 text-lg">QPR Gatekeeper Certified</h4>
+                                    <p class="text-charcoal-600 text-sm">Suicide Prevention Training</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-10 pt-8 border-t border-charcoal-600/10">
+                            <a href="#connect"
+                                class="text-gold-500 font-semibold hover:text-gold-600 transition-colors">Download
+                                Curriculum Vitae →</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience" class="py-32 relative bg-cream-100">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <div class="grid md:grid-cols-2 gap-16">
+
+                <!-- Experience -->
+                <div class="reveal">
+                    <header class="mb-10 flex items-center gap-4">
+                        <div class="w-12 h-[1px] bg-gold-400"></div>
+                        <h2 class="font-heading text-4xl text-charcoal-800">Experience</h2>
+                    </header>
+
+                    <div class="space-y-8 border-l border-gold-400/30 pl-8 ml-4">
+
+                        <div class="relative group">
+                            <div
+                                class="absolute -left-[38px] top-2 w-4 h-4 rounded-full bg-cream-100 border-2 border-gold-400 group-hover:bg-gold-400 transition-colors">
+                            </div>
+                            <h3 class="font-heading text-2xl text-charcoal-800">Centre for Neurodiversity Research and
+                                Innovation (CNRI)</h3>
+                            <p class="text-gold-500 font-medium mb-1">Intern and Volunteer</p>
+                            <p class="text-charcoal-600 text-sm mb-4">Jan 2026 - Present (2 months) | Bengaluru, India
+                            </p>
+                        </div>
+
+                        <div class="relative group">
+                            <div
+                                class="absolute -left-[38px] top-2 w-4 h-4 rounded-full bg-cream-100 border-2 border-charcoal-400 group-hover:bg-charcoal-600 transition-colors">
+                            </div>
+                            <h3 class="font-heading text-2xl text-charcoal-800">Synapses Neuropsychiatry Clinic</h3>
+                            <p class="text-charcoal-600 font-medium mb-1">Intern</p>
+                            <p class="text-charcoal-600 text-sm mb-4">Nov 2023 - Mar 2024 (5 months) | Delhi, India</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div id="education" class="reveal delay-100">
+                    <header class="mb-10 flex items-center gap-4">
+                        <div class="w-12 h-[1px] bg-gold-400"></div>
+                        <h2 class="font-heading text-4xl text-charcoal-800">Education</h2>
+                    </header>
+
+                    <div class="space-y-12">
+
+                        <div class="glass-card p-8 rounded-xl hover:bg-white transition-colors">
+                            <h3 class="font-heading text-xl text-charcoal-800 font-bold">Christ University, Bangalore
+                            </h3>
+                            <p class="text-charcoal-600">MSc, Health Psychology</p>
+                            <p class="text-sm text-gold-500 mt-2">Expected June 2025</p>
+                        </div>
+
+                        <div class="glass-card p-8 rounded-xl hover:bg-white transition-colors">
+                            <h3 class="font-heading text-xl text-charcoal-800 font-bold">University of Chicago</h3>
+                            <p class="text-charcoal-600">Neuroanatomy Course</p>
+                            <p class="text-sm text-charcoal-500 mt-2">Nov 2022 - Jan 2023</p>
+                        </div>
+
+                        <div class="glass-card p-8 rounded-xl hover:bg-white transition-colors">
+                            <h3 class="font-heading text-xl text-charcoal-800 font-bold">IILM University, Greater Noida
+                            </h3>
+                            <p class="text-charcoal-600">Bachelor of Arts, Psychology</p>
+                            <p class="text-sm text-charcoal-500 mt-2">Sep 2022 - May 2025</p>
+                        </div>
+
+                        <div class="glass-card p-8 rounded-xl hover:bg-white transition-colors">
+                            <h3 class="font-heading text-xl text-charcoal-800 font-bold">Delhi Public School</h3>
+                            <p class="text-charcoal-600">School Education</p>
+                            <p class="text-sm text-charcoal-500 mt-2">May 2005 - June 2021</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Writings (Medium) - Minimalist -->
+    <section id="writings" class="py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+                <div>
+                    <h2 class="font-heading text-4xl text-charcoal-800 mb-2">Thoughts & <span
+                            class="italic text-gold-400">Musings</span></h2>
+                </div>
+                <a href="https://medium.com/@natanyakhanna5" target="_blank"
+                    class="hidden md:inline-flex px-6 py-3 border border-charcoal-200 text-charcoal-600 rounded-full hover:bg-charcoal-800 hover:text-white transition-all duration-300">View
+                    All Articles</a>
+            </div>
+
+            <div id="blog-loading" class="text-center py-20">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gold-400">
+                </div>
+            </div>
+
+            <div id="blog-posts" class="grid md:grid-cols-3 gap-8 hidden">
+                <!-- Dynamic Content -->
+            </div>
+
+            <div id="blog-error" class="hidden text-center text-charcoal-500">
+                <p>Unable to retrieve latest articles.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect -->
+    <section id="connect" class="py-32 relative overflow-hidden bg-charcoal-800 text-cream-50">
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center reveal">
+            <h2 class="font-heading text-5xl md:text-7xl mb-8 tracking-tighter">Let's <span
+                    class="italic text-gold-400">Connect</span></h2>
+            <p class="text-xl text-charcoal-400 mb-16 max-w-2xl mx-auto">Open for research collaborations and academic
+                discussions.</p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-8">
+                <a href="mailto:natanyakhanna5@gmail.com"
+                    class="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-gold-400 hover:text-white hover:border-gold-400 transition-all duration-300 flex items-center gap-3 justify-center">
+                    <span>📧</span> natanyakhanna5@gmail.com
+                </a>
+
+                <a href="https://www.linkedin.com/in/natanyakhanna-01411b248" target="_blank"
+                    class="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all duration-300 flex items-center gap-3 justify-center">
+                    <span>💼</span> LinkedIn Profile
+                </a>
+            </div>
+
+            <footer class="mt-32 text-charcoal-500 text-sm">
+                <p>&copy; <span id="current-year"></span> Natanya Khanna. All rights reserved.</p>
+            </footer>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+<meta name="description"
+    content="Exploring the Human Mind. Portfolio of Natanya Khanna, Masters in Psychology Candidate. Specializing in Neuropsychology, Health, and Wellbeing.">
+
+<!-- Design System Fonts: Playfair Display (Headings) + Inter (Body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    deep: {
+                        900: '#0F0F23', // Deep Space Background
+                        800: '#181832',
+                    },
+                    electric: {
+                        500: '#7C3AED', // Electric Violet
+                        400: '#A78BFA', // Soft Lavender
+                    },
+                    neon: {
+                        500: '#F43F5E', // Neon Rose
+                    },
+                    starlight: '#E2E8F0',
+                },
+                fontFamily: {
+                    heading: ['"Playfair Display"', 'serif'],
+                    body: ['"Inter"', 'sans-serif'],
+                },
+                backgroundImage: {
+                    'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                },
+                animation: {
+                    'float': 'float 6s ease-in-out infinite',
+                    'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                },
+                keyframes: {
+                    float: {
+                        '0%, 100%': { transform: 'translateY(0)' },
+                        '50%': { transform: 'translateY(-20px)' },
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+<!-- Custom Styles for Liquid Glass -->
+<style>
+    body {
+        background-color: #0F0F23;
+        color: #E2E8F0;
+        overflow-x: hidden;
+    }
+
+    /* Liquid Glass Card */
+    .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .glass-card:hover {
+        border-color: rgba(124, 58, 237, 0.3);
+        /* Electric Violet border on hover */
+        box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
+    }
+
+    /* Glowing Text */
+    .text-glow {
+        text-shadow: 0 0 20px rgba(167, 139, 250, 0.3);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #0F0F23;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #33334d;
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #7C3AED;
+    }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Gradient Text */
+    .gradient-text {
+        background: linear-gradient(135deg, #E2E8F0 0%, #A78BFA 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
 </head>
 
 <body class="font-body selection:bg-electric-500 selection:text-white">
