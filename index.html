@@ -321,6 +321,7 @@
                     <li><a href="#about" class="hover:text-primary-600 transition-colors">About</a></li>
                     <li><a href="#experience" class="hover:text-primary-600 transition-colors">Experience</a></li>
                     <li><a href="#education" class="hover:text-primary-600 transition-colors">Education</a></li>
+                    <li><a href="#articles" class="hover:text-primary-600 transition-colors">Articles</a></li>
                     <li><a href="#connect"
                             class="ripple px-6 py-2 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-all shadow-lg hover:shadow-xl">Connect</a>
                     </li>
@@ -343,6 +344,7 @@
                     <li><a href="#about" class="block hover:text-primary-600 transition-colors">About</a></li>
                     <li><a href="#experience" class="block hover:text-primary-600 transition-colors">Experience</a></li>
                     <li><a href="#education" class="block hover:text-primary-600 transition-colors">Education</a></li>
+                    <li><a href="#articles" class="block hover:text-primary-600 transition-colors">Articles</a></li>
                     <li><a href="#connect"
                             class="block px-6 py-2 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-all text-center">Connect</a>
                     </li>
@@ -559,6 +561,59 @@
         </div>
     </section>
 
+    <!-- Articles Section -->
+    <section id="articles" class="py-20 sm:py-32 px-4 sm:px-6 bg-slate-50/50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-800 text-center mb-4 fade-in italic">
+                Latest <span class="text-primary-600">Articles</span>
+            </h2>
+            <p class="text-center text-slate-600 mb-12 sm:mb-16 fade-in">Thoughts on psychology, neuroscience, and
+                mental health</p>
+
+            <!-- Loading State -->
+            <div id="articles-loading" class="text-center py-12">
+                <div class="inline-block glass p-6 rounded-2xl">
+                    <div class="animate-pulse flex items-center gap-3">
+                        <svg class="w-6 h-6 text-primary-500 animate-spin" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                            </path>
+                        </svg>
+                        <span class="text-slate-600 font-medium">Loading articles...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Articles Grid -->
+            <div id="articles-grid" class="hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Articles will be inserted here dynamically -->
+            </div>
+
+            <!-- Error State -->
+            <div id="articles-error" class="hidden text-center py-12">
+                <div class="glass p-8 rounded-2xl max-w-md mx-auto">
+                    <span class="text-4xl mb-4 block">📝</span>
+                    <p class="text-slate-600">Unable to load articles. <a href="https://medium.com/@natanyakhanna5"
+                            target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:underline">Visit
+                            Medium</a></p>
+                </div>
+            </div>
+
+            <!-- View All Button -->
+            <div class="text-center mt-12 fade-in">
+                <a href="https://medium.com/@natanyakhanna5" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 glass px-6 sm:px-8 py-3 rounded-full font-medium text-slate-700 hover:text-primary-600 transition-all hover:scale-105">
+                    View All Articles on Medium
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Connect Section -->
     <section id="connect" class="py-20 sm:py-32 px-4 sm:px-6 relative">
         <div class="max-w-4xl mx-auto text-center fade-in">
@@ -753,6 +808,91 @@
 
         // Year
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Medium Articles Fetch
+        async function fetchMediumArticles() {
+            const RSS_URL = 'https://medium.com/feed/@natanyakhanna5';
+            const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`;
+
+            const loadingEl = document.getElementById('articles-loading');
+            const gridEl = document.getElementById('articles-grid');
+            const errorEl = document.getElementById('articles-error');
+
+            try {
+                const response = await fetch(API_URL);
+                const data = await response.json();
+
+                if (data.status === 'ok' && data.items && data.items.length > 0) {
+                    loadingEl.classList.add('hidden');
+                    gridEl.classList.remove('hidden');
+
+                    // Display latest 6 articles
+                    const articles = data.items.slice(0, 6);
+
+                    articles.forEach(article => {
+                        // Extract image from content
+                        const imgRegex = /<img[^>]+src="([^"]+)"/g;
+                        const imgMatch = imgRegex.exec(article.content);
+                        const imgUrl = imgMatch ? imgMatch[1] : 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="225" viewBox="0 0 400 225"%3E%3Crect fill="%23f1f5f9" width="400" height="225"/%3E%3Ctext fill="%2394a3b8" font-family="sans-serif" font-size="24" dy="10.5" font-weight="bold" x="50%25" y="50%25" text-anchor="middle"%3EMedium Article%3C/text%3E%3C/svg%3E';
+
+                        // Clean description
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = article.description;
+                        const cleanDesc = (tempDiv.textContent || tempDiv.innerText || '').substring(0, 120) + '...';
+
+                        // Format date
+                        const date = new Date(article.pubDate).toLocaleDateString('en-US', {
+                            month: 'short',
+                            day: 'numeric',
+                            year: 'numeric'
+                        });
+
+                        // Create article card
+                        const card = document.createElement('article');
+                        card.className = 'neu-glass rounded-3xl overflow-hidden tilt-card fade-in group';
+                        card.innerHTML = `
+                            <div class="h-48 overflow-hidden bg-slate-100">
+                                <img src="${imgUrl}" alt="${article.title}" 
+                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'225\' viewBox=\'0 0 400 225\'%3E%3Crect fill=\'%23f1f5f9\' width=\'400\' height=\'225\'/%3E%3Ctext fill=\'%2394a3b8\' font-family=\'sans-serif\' font-size=\'24\' dy=\'10.5\' font-weight=\'bold\' x=\'50%25\' y=\'50%25\' text-anchor=\'middle\'%3EMedium%3C/text%3E%3C/svg%3E'">
+                            </div>
+                            <div class="p-6">
+                                <div class="text-xs text-primary-600 font-bold mb-3">${date}</div>
+                                <h3 class="text-lg font-bold text-slate-800 mb-3 leading-tight group-hover:text-primary-600 transition-colors line-clamp-2">
+                                    ${article.title}
+                                </h3>
+                                <p class="text-sm text-slate-600 mb-4 line-clamp-3">${cleanDesc}</p>
+                                <a href="${article.link}" target="_blank" rel="noopener noreferrer" 
+                                   class="inline-flex items-center gap-2 text-primary-600 font-medium text-sm hover:gap-3 transition-all">
+                                    Read Article
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        `;
+
+                        gridEl.appendChild(card);
+                    });
+
+                    // Trigger fade-in animation for new cards
+                    setTimeout(() => {
+                        document.querySelectorAll('#articles-grid .fade-in').forEach(el => {
+                            observer.observe(el);
+                        });
+                    }, 100);
+                } else {
+                    throw new Error('No articles found');
+                }
+            } catch (error) {
+                console.error('Failed to fetch Medium articles:', error);
+                loadingEl.classList.add('hidden');
+                errorEl.classList.remove('hidden');
+            }
+        }
+
+        // Fetch articles on page load
+        fetchMediumArticles();
     </script>
 </body>
 
