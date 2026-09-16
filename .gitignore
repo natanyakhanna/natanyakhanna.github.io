@@ -1,0 +1,5 @@
+.gemini/
+.opencode/
+.gsd/
+__pycache__/
+*.pyc
